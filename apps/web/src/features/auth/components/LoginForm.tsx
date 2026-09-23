@@ -13,23 +13,33 @@ export function LoginForm() {
   } = form;
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6" noValidate>
-      <div className="space-y-1.5">
-        <h1 className="font-display text-2xl font-semibold text-ink">Bem-vinda de volta</h1>
-        <p className="text-sm text-ink-muted">Entre para acompanhar a operação da sua clínica.</p>
+    <form onSubmit={onSubmit} className="space-y-8" noValidate>
+      <div className="space-y-2">
+        <p className="text-accent text-xs font-bold tracking-[.14em] uppercase">Acesso seguro</p>
+        <h1 className="font-display text-ink text-3xl font-semibold tracking-[-.035em]">
+          Bem-vinda de volta
+        </h1>
+        <p className="text-ink-muted text-sm leading-6">
+          Entre para acompanhar a operação da sua clínica.
+        </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         <FormField id="email" label="E-mail" error={errors.email?.message}>
           <Input id="email" type="email" autoComplete="email" {...register("email")} />
         </FormField>
 
         <FormField id="password" label="Senha" error={errors.password?.message}>
-          <Input id="password" type="password" autoComplete="current-password" {...register("password")} />
+          <Input
+            id="password"
+            type="password"
+            autoComplete="current-password"
+            {...register("password")}
+          />
         </FormField>
 
         {loginError && (
-          <p role="alert" className="text-sm font-medium text-danger">
+          <p role="alert" className="text-danger text-sm font-medium">
             {loginError}
           </p>
         )}
@@ -43,13 +53,13 @@ export function LoginForm() {
                 <Checkbox id="rememberMe" checked={field.value} onCheckedChange={field.onChange} />
               )}
             />
-            <Label htmlFor="rememberMe" className="font-normal text-ink-muted">
+            <Label htmlFor="rememberMe" className="text-ink-muted font-normal">
               Manter conectado
             </Label>
           </div>
           <button
             type="button"
-            className="text-sm font-medium text-accent hover:text-accent-strong"
+            className="text-accent hover:text-accent-strong text-sm font-medium"
           >
             Esqueci minha senha
           </button>
@@ -60,7 +70,7 @@ export function LoginForm() {
         {isLoggingIn ? "Entrando..." : "Entrar"}
       </Button>
 
-      <p className="text-center text-xs text-ink-muted">
+      <p className="text-ink-muted text-center text-xs">
         Ambiente de demonstração — use qualquer senha com 4+ caracteres.
       </p>
     </form>

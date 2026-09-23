@@ -5,13 +5,12 @@ import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { cn } from "@/shared/lib/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors duration-fast ease-standard disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-all duration-fast ease-standard disabled:pointer-events-none disabled:opacity-50 active:translate-y-px",
   {
     variants: {
       variant: {
-        primary: "bg-accent text-on-accent shadow-sm hover:bg-accent-strong",
-        secondary:
-          "border border-border bg-surface text-ink hover:bg-surface-muted",
+        primary: "bg-accent text-on-accent shadow-sm hover:bg-accent-strong hover:shadow-md",
+        secondary: "border border-border bg-surface text-ink hover:bg-surface-muted",
         ghost: "text-ink-muted hover:bg-surface-muted hover:text-ink",
         destructive: "bg-danger text-on-accent hover:bg-danger-700",
       },
@@ -29,8 +28,7 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 

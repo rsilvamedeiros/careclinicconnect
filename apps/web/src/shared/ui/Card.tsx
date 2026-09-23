@@ -6,7 +6,7 @@ export const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn("rounded-lg border border-border bg-surface shadow-sm", className)}
+      className={cn("border-border/90 bg-surface rounded-xl border shadow-sm", className)}
       {...props}
     />
   ),
@@ -15,29 +15,34 @@ Card.displayName = "Card";
 
 export const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("flex flex-col gap-1 p-5 pb-0", className)} {...props} />
+    <div ref={ref} className={cn("flex flex-col gap-1 p-6 pb-0", className)} {...props} />
   ),
 );
 CardHeader.displayName = "CardHeader";
 
 export const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement>>(
   ({ className, children, ...props }, ref) => (
-    <h3 ref={ref} className={cn("font-display text-lg font-semibold text-ink", className)} {...props}>
+    <h3
+      ref={ref}
+      className={cn("font-display text-ink text-base font-semibold", className)}
+      {...props}
+    >
       {children}
     </h3>
   ),
 );
 CardTitle.displayName = "CardTitle";
 
-export const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...props }, ref) => (
-    <p ref={ref} className={cn("text-sm text-ink-muted", className)} {...props} />
-  ),
-);
+export const CardDescription = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p ref={ref} className={cn("text-ink-muted text-sm", className)} {...props} />
+));
 CardDescription.displayName = "CardDescription";
 
 export const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={cn("p-5", className)} {...props} />,
+  ({ className, ...props }, ref) => <div ref={ref} className={cn("p-6", className)} {...props} />,
 );
 CardContent.displayName = "CardContent";
 

@@ -10,13 +10,18 @@ export function NavItem({ label, to, icon: Icon }: NavItemConfig) {
       to={to}
       className={({ isActive }) =>
         cn(
-          "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium text-bone-200/80",
-          "transition-colors duration-fast ease-standard hover:bg-ink-800 hover:text-bone-50",
-          isActive && "bg-ink-800 text-bone-50",
+          "group text-bone-300 relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium",
+          "duration-fast ease-standard hover:text-bone-50 transition-all hover:bg-white/[.055]",
+          isActive &&
+            "text-bone-50 before:bg-clay-300 bg-white/[.09] shadow-[inset_0_0_0_1px_rgba(255,255,255,.04)] before:absolute before:-left-1 before:h-5 before:w-0.5 before:rounded-full",
         )
       }
     >
-      <Icon size={20} />
+      <Icon
+        size={19}
+        weight="duotone"
+        className="text-bone-400 group-hover:text-clay-300 transition-colors"
+      />
       {label}
     </NavLink>
   );

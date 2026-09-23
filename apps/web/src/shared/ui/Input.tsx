@@ -18,8 +18,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         ref={ref}
         type={type}
         className={cn(
-          "h-10 w-full rounded-md border bg-surface px-3 text-sm text-ink placeholder:text-ink-muted",
-          "transition-colors duration-fast ease-standard",
+          "bg-surface text-ink placeholder:text-ink-muted h-11 w-full rounded-md border px-3.5 text-sm shadow-xs",
+          "duration-fast ease-standard transition-colors",
           invalid ? "border-danger" : "border-border",
           className,
         )}
@@ -40,8 +40,8 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           type={visible ? "text" : "password"}
           className={cn(
-            "h-10 w-full rounded-md border bg-surface px-3 pr-10 text-sm text-ink placeholder:text-ink-muted",
-            "transition-colors duration-fast ease-standard",
+            "bg-surface text-ink placeholder:text-ink-muted h-11 w-full rounded-md border px-3.5 pr-10 text-sm shadow-xs",
+            "duration-fast ease-standard transition-colors",
             invalid ? "border-danger" : "border-border",
             className,
           )}
@@ -50,7 +50,7 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
         <button
           type="button"
           onClick={() => setVisible((v) => !v)}
-          className="absolute inset-y-0 right-0 flex w-10 items-center justify-center text-ink-muted hover:text-ink"
+          className="text-ink-muted hover:text-ink absolute inset-y-0 right-0 flex w-10 items-center justify-center"
           aria-label={visible ? "Ocultar senha" : "Mostrar senha"}
           tabIndex={-1}
         >
