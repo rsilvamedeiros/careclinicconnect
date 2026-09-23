@@ -1,0 +1,66 @@
+import type { Appointment } from "@/entities/appointment";
+
+import { todayAt } from "./dateHelpers";
+
+export const mockAppointmentsToday: Appointment[] = [
+  {
+    id: "appt-1",
+    patientId: "patient-1",
+    patientName: "Marina Costa",
+    professionalName: "Dra. Beatriz Nogueira",
+    procedureName: "Harmonização facial",
+    startAt: todayAt(9, 0),
+    endAt: todayAt(10, 0),
+    status: "CONFIRMED",
+  },
+  {
+    id: "appt-2",
+    patientId: "patient-2",
+    patientName: "Fernanda Lima",
+    professionalName: "Dra. Beatriz Nogueira",
+    procedureName: "Avaliação — Botox",
+    startAt: todayAt(10, 30),
+    endAt: todayAt(11, 0),
+    status: "CHECKED_IN",
+  },
+  {
+    id: "appt-3",
+    patientId: "patient-3",
+    patientName: "Rafael Torres",
+    professionalName: "Dr. Igor Salgado",
+    procedureName: "Sessão de laser",
+    startAt: todayAt(11, 30),
+    endAt: todayAt(12, 15),
+    status: "IN_PROGRESS",
+  },
+  {
+    id: "appt-4",
+    patientId: "patient-4",
+    patientName: "Patrícia Nunes",
+    professionalName: "Dra. Beatriz Nogueira",
+    procedureName: "Retorno pós-procedimento",
+    startAt: todayAt(14, 0),
+    endAt: todayAt(14, 30),
+    status: "SCHEDULED",
+  },
+  {
+    id: "appt-5",
+    patientId: "patient-5",
+    patientName: "Vitor Almeida",
+    professionalName: "Dr. Igor Salgado",
+    procedureName: "Preenchimento labial",
+    startAt: todayAt(15, 30),
+    endAt: todayAt(16, 15),
+    status: "SCHEDULED",
+  },
+  {
+    id: "appt-6",
+    patientId: "patient-6",
+    patientName: "Helena Prado",
+    professionalName: "Dra. Beatriz Nogueira",
+    procedureName: "Consulta de retorno",
+    startAt: todayAt(9, 30),
+    endAt: todayAt(10, 0),
+    status: "NO_SHOW",
+  },
+];
