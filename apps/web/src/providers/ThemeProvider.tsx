@@ -7,6 +7,6 @@ import type { ReactNode } from "react";
  */
 export function ThemeProvider({ children }: { children: ReactNode }) {
   return (
-    <IconContext.Provider value={{ size: 20, weight: "light" }}>{children}</IconContext.Provider>
+    <IconContext.Provider value={{ size: 18, weight: "regular" }}>{children}</IconContext.Provider>
   );
 }

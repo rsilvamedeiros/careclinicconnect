@@ -1,4 +1,3 @@
-import "@fontsource-variable/fraunces";
 import "@fontsource-variable/public-sans";
 import "@/shared/styles/global.css";
 

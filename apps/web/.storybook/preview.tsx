@@ -1,4 +1,3 @@
-import "@fontsource-variable/fraunces";
 import "@fontsource-variable/public-sans";
 import "../src/shared/styles/global.css";
 
@@ -29,7 +28,7 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       default: "canvas",
-      values: [{ name: "canvas", value: "#fdfbf7" }],
+      values: [{ name: "canvas", value: "#f8fafc" }],
     },
     controls: {
       matchers: {
