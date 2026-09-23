@@ -1,15 +1,22 @@
 # Arquitetura Frontend
 
+> Ver [ADR 0002](adr/0002-frontend-stack-vite-vs-nextjs.md) — decisão de usar Vite + React ao invés de Next.js para o app administrativo (`apps/web`).
+
 ## Stack sugerida
 
-- Next.js;
+- Vite;
 - React;
 - TypeScript;
-- App Router;
+- React Router;
 - TanStack Query;
 - React Hook Form;
 - Zod;
-- Storybook.
+- Radix UI (primitivos acessíveis, estilizados via design tokens próprios);
+- Tailwind CSS;
+- Motion;
+- Phosphor Icons;
+- Storybook;
+- Vitest + React Testing Library.
 
 ## Separação
 
@@ -53,15 +60,13 @@ Prioridade:
 - validar boundary de entrada;
 - componentes não devem conter regras complexas de negócio.
 
-## Server Components
+## Renderização
 
-Usar quando trouxer benefício real.
-
-Não forçar Server Components em fluxos altamente interativos.
+SPA client-rendered (ver ADR 0002). Sem Server Components neste app.
 
 ## Performance
 
-- code splitting;
+- code splitting por rota via `React.lazy`;
 - dynamic import;
 - cache control;
 - imagens otimizadas;
