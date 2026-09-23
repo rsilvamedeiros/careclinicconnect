@@ -1,0 +1,17 @@
+{
+  "name": "careclinicconnect",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "packageManager": "pnpm@12.6.0",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "typecheck": "pnpm --filter web typecheck",
+    "lint": "pnpm --filter web lint",
+    "test": "pnpm --filter web test",
+    "storybook": "pnpm --filter web storybook"
+  }
+}
