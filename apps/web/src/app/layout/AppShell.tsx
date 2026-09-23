@@ -26,7 +26,7 @@ export function AppShell() {
             </NavLink>
           ))}
         </nav>
-        <main className="mx-auto w-full max-w-[var(--container-app)] flex-1 px-4 py-6 sm:px-6 lg:px-10 lg:py-9">
+        <main className="mx-auto w-full max-w-[var(--container-app)] flex-1 px-4 py-6 sm:px-6 lg:px-10 lg:py-10 xl:px-12">
           <Outlet />
         </main>
       </div>

@@ -16,13 +16,13 @@ export function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-9" noValidate>
       <div>
-        <p className="text-ink-muted mb-3 text-[11px] font-semibold tracking-[.16em] uppercase">
+        <p className="mb-3 text-[11px] font-semibold tracking-[.16em] text-[#416f7d] uppercase">
           Portal da clínica
         </p>
-        <h1 className="font-display text-ink text-[2rem] leading-tight font-semibold tracking-[-.04em]">
+        <h1 className="font-display text-[2.35rem] leading-none font-semibold tracking-[-.055em] text-[#172a3a]">
           Acesse seu espaço
         </h1>
-        <p className="text-ink-muted mt-3 text-[15px] leading-6">
+        <p className="text-ink-muted mt-4 text-[15px] leading-6">
           Use seu e-mail profissional para continuar.
         </p>
       </div>
@@ -34,7 +34,7 @@ export function LoginForm() {
             type="email"
             autoComplete="email"
             placeholder="nome@clinica.com.br"
-            className="h-12"
+            className="h-12 border-[#d6dddf] bg-white focus:border-[#719eab]"
             {...register("email")}
           />
         </FormField>
@@ -45,7 +45,7 @@ export function LoginForm() {
             type="password"
             autoComplete="current-password"
             placeholder="Digite sua senha"
-            className="h-12"
+            className="h-12 border-[#d6dddf] bg-white focus:border-[#719eab]"
             {...register("password")}
           />
         </FormField>
@@ -62,7 +62,12 @@ export function LoginForm() {
               control={control}
               name="rememberMe"
               render={({ field }) => (
-                <Checkbox id="rememberMe" checked={field.value} onCheckedChange={field.onChange} />
+                <Checkbox
+                  id="rememberMe"
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  className="data-[state=checked]:border-[#416f7d] data-[state=checked]:bg-[#416f7d]"
+                />
               )}
             />
             <Label htmlFor="rememberMe" className="text-ink-muted text-xs font-normal sm:text-sm">
@@ -71,7 +76,7 @@ export function LoginForm() {
           </div>
           <button
             type="button"
-            className="text-accent hover:text-accent-strong shrink-0 text-xs font-semibold sm:text-sm"
+            className="shrink-0 text-xs font-semibold text-[#416f7d] hover:text-[#294f5b] sm:text-sm"
           >
             Esqueci minha senha
           </button>
@@ -79,7 +84,12 @@ export function LoginForm() {
       </div>
 
       <div className="space-y-5">
-        <Button type="submit" className="h-12 w-full" size="lg" disabled={isLoggingIn}>
+        <Button
+          type="submit"
+          className="h-12 w-full bg-[#24495a] text-white hover:bg-[#172a3a]"
+          size="lg"
+          disabled={isLoggingIn}
+        >
           {isLoggingIn ? "Entrando..." : "Entrar"}
         </Button>
 
