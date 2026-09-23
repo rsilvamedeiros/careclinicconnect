@@ -3,39 +3,61 @@ import { Logo } from "@/shared/ui";
 
 export function AuthLayout() {
   return (
-    <div className="bg-surface grid min-h-screen lg:grid-cols-[minmax(28rem,1.05fr)_minmax(28rem,.95fr)]">
-      <div className="bg-ink-900 relative hidden flex-col justify-between overflow-hidden p-10 lg:flex xl:p-14">
-        <div
-          aria-hidden="true"
-          className="hairline-grid pointer-events-none absolute inset-0 opacity-50"
-        />
-        <div
-          aria-hidden="true"
-          className="border-clay-500/10 absolute -right-48 -bottom-48 size-[34rem] rounded-full border-[7rem]"
-        />
-        <Logo className="text-bone-50 [&>span:last-child>span]:text-clay-300 relative" />
-        <div className="relative max-w-xl space-y-6">
-          <span className="text-clay-300 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[.06] px-3 py-1.5 text-[11px] font-semibold tracking-[.13em] uppercase">
-            <span className="bg-clay-300 size-1.5 rounded-full" /> Operação clínica integrada
-          </span>
-          <p className="font-display text-bone-50 text-5xl leading-[1.06] font-semibold tracking-[-.045em] text-balance xl:text-6xl">
-            O sistema operacional de cuidado da sua clínica.
-          </p>
-          <p className="text-bone-400 max-w-lg text-base leading-7">
-            Agenda, prontuário, CRM e financeiro conectados em uma única experiência — pensada para
-            quem cuida de pessoas, não de planilhas.
-          </p>
-        </div>
-        <p className="text-bone-500 relative text-xs">
-          © {new Date().getFullYear()} CareClinicConnect. Todos os direitos reservados.
-        </p>
-      </div>
+    <div className="bg-surface grid min-h-screen lg:grid-cols-[minmax(25rem,44%)_1fr]">
+      <aside className="bg-ink-900 relative hidden flex-col p-10 lg:flex xl:px-16 xl:py-12">
+        <Logo className="text-bone-50 [&>span:last-child>span]:text-clay-300" />
 
-      <div className="bg-surface flex items-center justify-center px-6 py-12 sm:px-12">
-        <div className="w-full max-w-[26rem]">
+        <div className="my-auto max-w-[31rem] py-16">
+          <p className="text-clay-300 mb-6 text-xs font-semibold tracking-[.18em] uppercase">
+            Gestão que acompanha o cuidado
+          </p>
+          <h2 className="font-display text-bone-50 text-[2.65rem] leading-[1.12] font-medium tracking-[-.045em] xl:text-[3.15rem]">
+            Sua clínica, organizada para o que realmente importa.
+          </h2>
+          <p className="text-bone-400 mt-6 max-w-md text-[15px] leading-7">
+            Uma visão clara da agenda, dos pacientes e da operação — do primeiro contato ao
+            pós-atendimento.
+          </p>
+
+          <dl className="border-bone-50/10 mt-12 grid grid-cols-3 border-t pt-6">
+            <div>
+              <dt className="text-bone-500 text-[10px] font-semibold tracking-[.14em] uppercase">
+                Hoje
+              </dt>
+              <dd className="text-bone-100 mt-2 text-sm font-medium">Agenda centralizada</dd>
+            </div>
+            <div className="border-bone-50/10 border-l pl-5">
+              <dt className="text-bone-500 text-[10px] font-semibold tracking-[.14em] uppercase">
+                Pacientes
+              </dt>
+              <dd className="text-bone-100 mt-2 text-sm font-medium">Histórico contínuo</dd>
+            </div>
+            <div className="border-bone-50/10 border-l pl-5">
+              <dt className="text-bone-500 text-[10px] font-semibold tracking-[.14em] uppercase">
+                Gestão
+              </dt>
+              <dd className="text-bone-100 mt-2 text-sm font-medium">Dados em contexto</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div className="text-bone-500 flex items-center justify-between text-[11px]">
+          <span>CareClinicConnect © {new Date().getFullYear()}</span>
+          <span>Privacidade · Segurança</span>
+        </div>
+      </aside>
+
+      <main className="bg-surface relative flex min-h-screen items-center justify-center px-6 py-10 sm:px-12 lg:px-16">
+        <div className="text-ink-muted absolute top-8 right-8 hidden text-xs xl:block">
+          Precisa de ajuda?{" "}
+          <button type="button" className="text-ink hover:text-accent font-semibold">
+            Fale com o suporte
+          </button>
+        </div>
+        <div className="w-full max-w-[25rem]">
           <Outlet />
         </div>
-      </div>
+      </main>
     </div>
   );
 }
