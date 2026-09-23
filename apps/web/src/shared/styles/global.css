@@ -109,10 +109,4 @@
   .text-balance {
     text-wrap: balance;
   }
-  .hairline-grid {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-    background-size: 52px 52px;
-  }
 }
