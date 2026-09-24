@@ -27,6 +27,9 @@ const PatientProfilePage = lazy(() =>
     default: m.PatientProfilePage,
   })),
 );
+const CrmPage = lazy(() =>
+  import("@/features/crm/routes/CrmPage").then((m) => ({ default: m.CrmPage })),
+);
 
 function RouteFallback() {
   return (
@@ -101,6 +104,14 @@ export const router = createBrowserRouter([
             element: (
               <LazyRoute>
                 <PatientProfilePage />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: "/crm",
+            element: (
+              <LazyRoute>
+                <CrmPage />
               </LazyRoute>
             ),
           },

@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 import { useAuth } from "@/providers/AuthProvider";
 import { Plus } from "@/shared/icons";
@@ -28,6 +29,7 @@ const reveal = {
 export function DashboardPage() {
   const { currentUser } = useAuth();
   const { data, isPending } = useDashboardData();
+  const navigate = useNavigate();
 
   return (
     <div className="space-y-7 lg:space-y-9">
@@ -159,6 +161,7 @@ export function DashboardPage() {
             </div>
             <button
               type="button"
+              onClick={() => navigate("/crm")}
               className="text-accent hover:text-accent-strong text-xs font-semibold"
             >
               Abrir CRM

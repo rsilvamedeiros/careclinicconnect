@@ -19,5 +19,6 @@ export interface Lead {
   stage: LeadStage;
   ownerName: string;
   ownerAvatarUrl?: string;
+  estimatedValueCents: number;
   createdAt: string;
 }

@@ -24,7 +24,7 @@ export const NAV_ITEMS: NavItemConfig[] = [
   { label: "Dashboard", to: "/dashboard", icon: Gauge },
   { label: "Agenda", to: "/agenda", icon: CalendarBlank, comingSoon: true },
   { label: "Pacientes", to: "/pacientes", icon: Users },
-  { label: "CRM", to: "/crm", icon: ChatCircleDots, comingSoon: true },
+  { label: "CRM", to: "/crm", icon: ChatCircleDots },
   { label: "Clínica", to: "/clinica", icon: Stethoscope, comingSoon: true },
   { label: "Financeiro", to: "/financeiro", icon: CreditCard, comingSoon: true },
   { label: "Automação", to: "/automacao", icon: Robot, comingSoon: true },
