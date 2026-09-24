@@ -30,6 +30,11 @@ const PatientProfilePage = lazy(() =>
 const CrmPage = lazy(() =>
   import("@/features/crm/routes/CrmPage").then((m) => ({ default: m.CrmPage })),
 );
+const AutomationPage = lazy(() =>
+  import("@/features/automation/routes/AutomationPage").then((m) => ({
+    default: m.AutomationPage,
+  })),
+);
 
 function RouteFallback() {
   return (
@@ -112,6 +117,14 @@ export const router = createBrowserRouter([
             element: (
               <LazyRoute>
                 <CrmPage />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: "/automacao",
+            element: (
+              <LazyRoute>
+                <AutomationPage />
               </LazyRoute>
             ),
           },
