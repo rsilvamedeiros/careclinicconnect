@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import type { ClinicInsight } from "@/entities/insight";
 import { Sparkle } from "@/shared/icons";
 
@@ -5,6 +7,7 @@ import { InsightCard } from "./InsightCard";
 
 export function ClinicIntelligencePanel({ insights }: { insights: ClinicInsight[] }) {
   const featuredInsights = insights.slice(0, 3);
+  const navigate = useNavigate();
 
   return (
     <section className="space-y-4">
@@ -20,7 +23,11 @@ export function ClinicIntelligencePanel({ insights }: { insights: ClinicInsight[
             </p>
           </div>
         </div>
-        <button type="button" className="text-accent hover:text-accent-strong text-xs font-semibold">
+        <button
+          type="button"
+          onClick={() => navigate("/analytics")}
+          className="text-accent hover:text-accent-strong text-xs font-semibold"
+        >
           Ver todos os insights
         </button>
       </div>

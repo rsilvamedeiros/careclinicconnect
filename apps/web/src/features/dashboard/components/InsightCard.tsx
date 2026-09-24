@@ -1,4 +1,5 @@
 import type { Icon } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 
 import type { ClinicInsight, InsightCategory, InsightSeverity } from "@/entities/insight";
 import { CalendarBlank, ChartLineUp, ChatCircleDots, Users, Warning } from "@/shared/icons";
@@ -11,6 +12,15 @@ const categoryIcon: Record<InsightCategory, Icon> = {
   lead_follow_up: ChatCircleDots,
   conversion: ChartLineUp,
   schedule_utilization: CalendarBlank,
+};
+
+/** Where "acting" on each signal actually takes the user in this app. */
+const categoryRoute: Record<InsightCategory, string> = {
+  no_show_risk: "/agenda",
+  patient_retention: "/pacientes",
+  lead_follow_up: "/crm",
+  conversion: "/crm",
+  schedule_utilization: "/agenda",
 };
 
 const severityBadgeTone: Record<InsightSeverity, "danger" | "warning" | "accent"> = {
@@ -33,6 +43,7 @@ const severityAccentBar: Record<InsightSeverity, string> = {
 
 export function InsightCard({ insight }: { insight: ClinicInsight }) {
   const CategoryIcon = categoryIcon[insight.category];
+  const navigate = useNavigate();
 
   return (
     <div className="border-border bg-surface relative overflow-hidden rounded-xl border">
@@ -64,7 +75,11 @@ export function InsightCard({ insight }: { insight: ClinicInsight }) {
               {insight.metricValue}
             </p>
           </div>
-          <Button variant="secondary" size="sm">
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => navigate(categoryRoute[insight.category])}
+          >
             {insight.actionLabel}
           </Button>
         </div>

@@ -28,6 +28,6 @@ export const NAV_ITEMS: NavItemConfig[] = [
   { label: "Clínica", to: "/clinica", icon: Stethoscope, comingSoon: true },
   { label: "Financeiro", to: "/financeiro", icon: CreditCard, comingSoon: true },
   { label: "Automação", to: "/automacao", icon: Robot },
-  { label: "Analytics", to: "/analytics", icon: ChartLineUp, comingSoon: true },
+  { label: "Analytics", to: "/analytics", icon: ChartLineUp },
   { label: "Configurações", to: "/configuracoes", icon: Gear, comingSoon: true },
 ];

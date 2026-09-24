@@ -38,6 +38,9 @@ const AutomationPage = lazy(() =>
 const AgendaPage = lazy(() =>
   import("@/features/agenda/routes/AgendaPage").then((m) => ({ default: m.AgendaPage })),
 );
+const AnalyticsPage = lazy(() =>
+  import("@/features/analytics/routes/AnalyticsPage").then((m) => ({ default: m.AnalyticsPage })),
+);
 
 function RouteFallback() {
   return (
@@ -136,6 +139,14 @@ export const router = createBrowserRouter([
             element: (
               <LazyRoute>
                 <AutomationPage />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: "/analytics",
+            element: (
+              <LazyRoute>
+                <AnalyticsPage />
               </LazyRoute>
             ),
           },
