@@ -1,6 +1,7 @@
 export * from "./appointment";
 export * from "./clinical";
 export * from "./finance";
+export * from "./insight";
 export * from "./lead";
 export * from "./patient";
 export * from "./procedure";

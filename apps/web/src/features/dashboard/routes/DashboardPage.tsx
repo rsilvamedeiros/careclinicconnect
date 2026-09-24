@@ -6,6 +6,7 @@ import { formatDate } from "@/shared/lib/formatters";
 import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from "@/shared/ui";
 
 import { AlertsPanel } from "../components/AlertsPanel";
+import { ClinicIntelligencePanel } from "../components/ClinicIntelligencePanel";
 import { MetricCard } from "../components/MetricCard";
 import { RecentLeadsList } from "../components/RecentLeadsList";
 import { TodayAgendaList } from "../components/TodayAgendaList";
@@ -45,6 +46,21 @@ export function DashboardPage() {
         </Button>
       </div>
 
+      <motion.div custom={0.05} initial="hidden" animate="show" variants={reveal}>
+        {isPending || !data ? (
+          <div className="space-y-4">
+            <Skeleton className="h-5 w-56" />
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              {Array.from({ length: 3 }).map((_, index) => (
+                <Skeleton key={index} className="h-44" />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <ClinicIntelligencePanel insights={data.insights} />
+        )}
+      </motion.div>
+
       <div className="border-border bg-surface grid grid-cols-2 overflow-hidden rounded-xl border shadow-sm lg:grid-cols-4">
         {isPending || !data
           ? Array.from({ length: 4 }).map((_, index) => (
@@ -53,7 +69,7 @@ export function DashboardPage() {
           : data.metrics.map((metric, index) => (
               <motion.div
                 key={metric.id}
-                custom={index * 0.05}
+                custom={0.1 + index * 0.05}
                 initial="hidden"
                 animate="show"
                 variants={reveal}
@@ -65,7 +81,7 @@ export function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1.75fr)_minmax(19rem,.75fr)]">
-        <motion.div custom={0.1} initial="hidden" animate="show" variants={reveal}>
+        <motion.div custom={0.2} initial="hidden" animate="show" variants={reveal}>
           <Card className="overflow-hidden">
             <CardHeader className="border-border flex-row items-end justify-between border-b pb-5">
               <div>
@@ -96,7 +112,7 @@ export function DashboardPage() {
         </motion.div>
 
         <motion.div
-          custom={0.15}
+          custom={0.25}
           initial="hidden"
           animate="show"
           variants={reveal}
@@ -132,7 +148,7 @@ export function DashboardPage() {
         </motion.div>
       </div>
 
-      <motion.div custom={0.2} initial="hidden" animate="show" variants={reveal}>
+      <motion.div custom={0.3} initial="hidden" animate="show" variants={reveal}>
         <Card className="overflow-hidden">
           <CardHeader className="border-border flex-row items-end justify-between border-b pb-5">
             <div>
