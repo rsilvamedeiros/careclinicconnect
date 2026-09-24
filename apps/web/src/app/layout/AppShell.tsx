@@ -1,5 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 
+import { AiAssistantWidget } from "@/features/ai-assistant/components/AiAssistantWidget";
+
 import { Sidebar } from "./Sidebar";
 import { Topbar } from "./Topbar";
 import { NAV_ITEMS } from "./navItems";
@@ -30,6 +32,7 @@ export function AppShell() {
           <Outlet />
         </main>
       </div>
+      <AiAssistantWidget />
     </div>
   );
 }

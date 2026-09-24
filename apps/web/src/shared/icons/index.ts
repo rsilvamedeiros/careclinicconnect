@@ -5,6 +5,7 @@
  */
 export { IconContext } from "@phosphor-icons/react";
 export {
+  ArrowLeft,
   ArrowRight,
   Bell,
   CalendarBlank,
@@ -26,6 +27,7 @@ export {
   Lightning,
   Lock,
   MagnifyingGlass,
+  PaperPlaneRight,
   Pause,
   Phone,
   Play,

@@ -1,3 +1,4 @@
+export * from "./aiAgent";
 export * from "./appointment";
 export * from "./clinical";
 export * from "./finance";
