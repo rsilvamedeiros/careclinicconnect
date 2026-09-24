@@ -22,4 +22,6 @@ export interface Appointment {
   startAt: string;
   endAt: string;
   status: AppointmentStatus;
+  /** Smart Scheduling signal (docs/product/08-future-ideas.md) — omitted when risk is negligible. */
+  noShowRiskPct?: number;
 }

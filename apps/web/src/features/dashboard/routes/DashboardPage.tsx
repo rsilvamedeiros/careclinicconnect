@@ -94,6 +94,7 @@ export function DashboardPage() {
               </div>
               <button
                 type="button"
+                onClick={() => navigate("/agenda")}
                 className="text-accent hover:text-accent-strong text-xs font-semibold"
               >
                 Ver agenda completa

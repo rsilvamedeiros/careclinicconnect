@@ -22,7 +22,7 @@ export interface NavItemConfig {
 
 export const NAV_ITEMS: NavItemConfig[] = [
   { label: "Dashboard", to: "/dashboard", icon: Gauge },
-  { label: "Agenda", to: "/agenda", icon: CalendarBlank, comingSoon: true },
+  { label: "Agenda", to: "/agenda", icon: CalendarBlank },
   { label: "Pacientes", to: "/pacientes", icon: Users },
   { label: "CRM", to: "/crm", icon: ChatCircleDots },
   { label: "Clínica", to: "/clinica", icon: Stethoscope, comingSoon: true },

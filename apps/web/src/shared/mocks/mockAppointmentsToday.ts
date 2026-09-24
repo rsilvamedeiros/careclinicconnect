@@ -42,6 +42,7 @@ export const mockAppointmentsToday: Appointment[] = [
     startAt: todayAt(14, 0),
     endAt: todayAt(14, 30),
     status: "SCHEDULED",
+    noShowRiskPct: 32,
   },
   {
     id: "appt-5",
@@ -52,6 +53,7 @@ export const mockAppointmentsToday: Appointment[] = [
     startAt: todayAt(15, 30),
     endAt: todayAt(16, 15),
     status: "SCHEDULED",
+    noShowRiskPct: 45,
   },
   {
     id: "appt-6",

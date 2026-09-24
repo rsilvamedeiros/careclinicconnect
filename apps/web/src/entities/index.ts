@@ -7,4 +7,5 @@ export * from "./patient";
 export * from "./procedure";
 export * from "./timeline";
 export * from "./user";
+export * from "./waitlist";
 export * from "./workflow";
